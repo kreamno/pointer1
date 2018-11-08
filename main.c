@@ -5,19 +5,20 @@
 
 int main(int argc, char *argv[]) {
 	
-	int x=10;
-	int y=20;
+	int grade[5] = {10, 20, 30, 40, 50};
+	int average=0;
 	int *ptr;
 	
-	ptr = &x;
-	printf("prt value of x : %d\n", *ptr);
-
-	ptr = &y;
-	printf("prt value of y : %d\n", *ptr);
+	int i;
 	
-	ptr = &x;
-	*ptr=20;
-	printf("changed value of x : %d\n", x);
+	ptr = grade; 	//pointer setting: 배열의 주소 자체가 메모리 주 소 
+
+	//average caculation
+	for (i=0;i<5;i++) {
+		average += *ptr+i; 	// *ptr+i=ptr[i]
+	}
+
+	printf("average is %i\n", average/5);
 	
 	return 0;
 }
