@@ -3,22 +3,24 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) {
-	
-	int grade[5] = {10, 20, 30, 40, 50};
-	int average=0;
-	int *ptr;
-	
-	int i;
-	
-	ptr = grade; 	//pointer setting: 배열의 주소 자체가 메모리 주 소 
+void swap(int *a, int *b) {		//call by value
 
-	//average caculation
-	for (i=0;i<5;i++) {
-		average += *ptr+i; 	// *ptr+i=ptr[i]
-	}
+	int temp;
+	
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
 
-	printf("average is %i\n", average/5);
+int main(void) {
+	int x=10;
+	int y=20;
+	
+	printf("x : %d, y : %d \n", x, y);
+	
+	swap(&x, &y);
+	printf("x : %d, y : %d \n", x, y);
 	
 	return 0;
-}
+	
+};
